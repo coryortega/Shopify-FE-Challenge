@@ -1,10 +1,18 @@
 .App {
   text-align: center;
+  /* background-color: grey; */
 }
 
 .container {
   display: flex;
   justify-content: center;
+}
+
+.confetti {
+  border: 4px solid black;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 20%;
 }
 
 .search-container {
@@ -18,12 +26,38 @@
 .nominees-container {
   padding: 20px;
   width: 450px;
+  /* border: 1px solid black;
+  border-radius: 40px; */
 }
 
 .nominees {
   height: 600px;
   overflow-y: scroll;
   margin-top: 40px;
+}
+
+.nominees::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+.nominees::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.nominees::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(247, 237, 134)),
+									   color-stop(0.72, rgb(250, 240, 130)),
+									   color-stop(0.86, rgb(250, 233, 37)));
 }
 
 .movies-container {
@@ -33,6 +67,30 @@
   overflow-x: hidden;
   width: 500px;
   height: 600px;
+}
+
+.movies-container::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+.movies-container::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.movies-container::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(247, 237, 134)),
+									   color-stop(0.72, rgb(250, 240, 130)),
+									   color-stop(0.86, rgb(250, 233, 37)));
 }
 
 .overlay {

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "./Components/MovieCard/MovieCard";
+import useWindowSize from './Hooks/WindowDimensions';
+import Confetti from 'react-confetti';
 import axios from "axios";
 import "./App.css";
 
@@ -7,6 +9,7 @@ function App() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
   const [nominees, setNominees] = useState([]);
+  const [confetti, setConfetti] = useState(false);
 
   useEffect(() => {
     const searchableMovie = query.replace(/\s/g, "+");
@@ -33,6 +36,7 @@ function App() {
     } else {
       setNominees([...nominees, newNominee]);
       if (nominees.length == 4) {
+        setConfetti(true);
         alert(
           "Congratulations, you just won! What is that you won? I have no idea, but just know that YOU DID IT!!!"
         );
@@ -41,12 +45,21 @@ function App() {
   };
 
   const removeNominee = (id) => {
-    let removedNominee = nominees.filter((el) => el.imdbID !== id);
+    let removedNominee = nominees.filter((nominee) => nominee.imdbID !== id);
     setNominees([...removedNominee]);
   };
 
+  const { width, height } = useWindowSize()
+
   return (
     <div className="App">
+      <Confetti
+        width={width}
+        height={height}
+        recycle={false}
+        numberOfPieces={500}
+        run={confetti}
+      />
       <h1>Welcome!</h1>
       <h2>Nominate some movies to win a prize...</h2>
       <div className="container">
