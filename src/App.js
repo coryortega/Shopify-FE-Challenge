@@ -16,7 +16,7 @@ function App() {
     const omdbKey = process.env.REACT_APP_API_KEY;
 
     axios
-      .get(`http://www.omdbapi.com/?s=${searchableMovie}&apikey=${omdbKey}`)
+      .get(`https://www.omdbapi.com/?s=${searchableMovie}&apikey=${omdbKey}`)
       .then((res) => {
         setMovies(res.data.Search);
       })
