@@ -1,6 +1,8 @@
 # Shopify - Movie Nominations
 
-This project was created for Shopify's front-end technical challenge. Could it look better? Definitely. But it exceeds the requirements and I had a blast building it, so I'm content. 
+This project was created for Shopify's front-end technical challenge. Could it look better? Definitely. But it exceeds the requirements and I had a blast building it, so I'm content.
+
+Production link: https://main.d19dzfddg2ad74.amplifyapp.com
 
 ## Technologies used:
 
